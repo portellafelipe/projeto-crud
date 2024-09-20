@@ -1,0 +1,140 @@
+/* estilo css para a barra de navegação, no caso o menu*/
+.barra_navegacao{
+    background-color:#333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.barra_navegacao .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.logo h1 a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.barra_navegacao ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.barra_navegacao ul li{
+    margin: 0 15px;
+}
+
+.barra_navegacao ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.barra_navegacao ul li a:hover {
+    color: yellow;
+}
+/* aq é o inicio*/
+
+/* Hero Section (Seção principal) */
+.hero {
+    background-color: #f4f4f4;
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 70px; /* Espaço para a barra fixa */
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #FFD700;
+}
+/* Seção Sobre */
+#sobre {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+/* Flexbox para organizar a imagem e o texto lado a lado */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre-imagem {
+    flex: 1;
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.sobre-imagem img {
+    max-width: 100%; /* A imagem será redimensionada de acordo com o tamanho da tela */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+}
+
+.sobre-texto {
+    flex: 2;
+    color: #666;
+}
+
+.sobre-texto h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* responsividade do site by chatgpt :) */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-imagem {
+        margin: 0 0 20px 0;
+    }
+}
+
+/* parte de baixo, vulgo rodapé */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
