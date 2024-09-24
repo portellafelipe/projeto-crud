@@ -127,6 +127,95 @@
     }
 }
 
+/* Seção do funcionamento */
+
+#funcionamento {
+    padding: 50px 0;
+    background-color: whitesmoke;
+}
+
+.funcionamento-container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.baloes {
+    display: flex;
+    justify-content: space-between; /* Use space-between para espaçamento igual */
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.balao {
+    background-color: lightslategray;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%; /* Garantir que cada balão ocupe 30% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 10px; /* Adicione uma margem lateral para espaçamento */
+}
+
+.balao h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.balao p {
+    font-size: 1em;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .baloes {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center;
+    }
+    
+    .balao {
+        width: 80%; /* Ajusta o tamanho em telas menores */
+        margin: 10px 0; /* Espaçamento vertical */
+    }
+}
+
+/* parte do gerenciamento */
+
+#gerenciar-dispensa{
+    padding: 50px 20px;
+    background-color: white ;
+}
+
+.gerenciar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gerenciar-texto{
+    flex: 1;
+    color: #333;
+}
+.gerenciar-texto h2{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.gerenciar-texto p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.gerenciar-texto .btn{
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
 /* parte de baixo, vulgo rodapé */
 
 footer {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
                     <li><a href="">SOBRE</a></li>
                     <li><a href="">FUNCIONAMENTO</a></li>
                     <li><a href="">GERENCIAR DISPENSA</a></li>
-                    <li><a href="login.html">LOGIN/CADASTRE-SE</a></li>
+                    <li><a href="login.php">LOGIN/CADASTRE-SE</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,7 +33,7 @@
             <p>aq vai uma frase de impacto, em cima de um link pra acessar o estoque, dps arrumar e alinhar a esq ou dir </p>
             <a href="login.php" class="btn">Acessar Sistema</a>
         </div>
-    </section>
+</section>
 
 <!-- a parte do Sobre -->
 <section id="sobre">
@@ -45,6 +45,42 @@
         <div class="sobre-texto">
             <h2>Sobre o Sistema</h2>
             <p>aq vai o texto pra apresentar o sistema e o pq dele ser criado.</p>
+        </div>
+    </div>
+</section>
+
+<!-- parte pra explicar o funcionamento-->
+<section id="funcionamento">
+    <div class="container funcionamento-container">
+        <h2>Como funciona:</h2>
+        <div class="baloes">
+            <div class="balao">
+                <h3>Cadastro de Produtos</h3>
+                <p> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+            </div>
+            <div class="balao">
+                <h3>Controle da Validade</h3>
+                <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+            </div>
+            <div class="balao">
+                <h3>Atualização de quantidade</h3>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- parte do gerenciamento -->
+
+<section id="gerenciar-dispensa">
+    <div class="container gerenciar-container">
+        <div class="gerenciar-texto">
+            <h2>Gerenciar dispensa</h2>
+            <p>add txt txt txt txt</p>
+            <a href="gerenciamento.php" class="btn">Acessa Dispensa</a>
+        </div>
+        <div class="gerenciar-imagem">
+            <img src="" alt="Dispensa">
         </div>
     </div>
 </section>
