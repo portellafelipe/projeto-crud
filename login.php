@@ -47,7 +47,7 @@
                 <input type="text" id="cusuario" name="cusuario" required>
                 <!-- email -->
                 <label for="cemail">Email</label>
-                <input type="text" id="cemail" name="cemail" required>
+                <input type="email" id="cemail" name="cemail" required>
                 <!-- senha -->
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="csenha" required>

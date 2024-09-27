@@ -1,7 +1,7 @@
 <?php 
 include "gravaLogin.php";
 $txtConteudo = filter_input_array(INPUT_GET,FILTER_DEFAULT)
-$sql = "SELECT * FROM USUARIO WHERE EMAIL"
+$sql = "SELECT * FROM USUARIO WHERE EMAIL = email and Senha = senha"
 $rs = mysqli_query($conexao,$sql);
 $ver = $conn -> prepare($sql);
 $ver->bind_param("s",$email);
