@@ -216,6 +216,34 @@
     transition: background-color 0.3s;
 }
 
+.gerenciar-texto .btn:hover{
+    background-color: #FFD700;
+}
+
+.gerenciar-imagem{
+    flex: 1;
+    text-align: right;
+}
+
+.gerenciar-imagem img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px){
+    .gerenciar-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .gerenciar-imagem {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .gerenciar-imagem img {
+        max-width: 80%;
+    }
+}
 /* parte de baixo, vulgo rodapé */
 
 footer {
@@ -226,4 +254,13 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.alert {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde escuro */
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #c3e6cb; /* Borda verde clara */
+    border-radius: 5px;
 }

@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="estiloLogin.css">
 </head>
 <body>
+    <header>
+        <nav class="barra_navegacao">
+            <div class="container">
+                <div class="logo">
+                    <h1><a href="index.php">Smart Stock</a></h1>
+                </div>
+                <ul class="navegar_links">
+                    <li><a href="">INÍCIO</a></li>
+                    <li><a href="">SOBRE</a></li>
+                    <li><a href="">FUNCIONAMENTO</a></li>
+                    <li><a href="">GERENCIAR DISPENSA</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <!-- aq vai o login -->
          <div class="form-container">
@@ -26,7 +41,7 @@
          </div>
         <div class="form-container">
             <h2>Cadastro</h2>
-            <form action="gravaLogin" method="post"> 
+            <form action="gravaLogin.php" method="post"> 
                 <!-- usuario-->
                 <label for="cusuario">Usuário</label>
                 <input type="text" id="cusuario" name="cusuario" required>
@@ -35,8 +50,16 @@
                 <input type="text" id="cemail" name="cemail" required>
                 <!-- senha -->
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" id="senha" name="csenha" required>
+                <div class="button">
+                    <button type="submit">Cadastrar</button> <!-- Botão de cadastro -->
+                </div>
                 </form>
-
+                
         </div>
+    <?php 
+    if (isset($_GET['msg'])) {
+        echo "<div class='alert'>" . htmlspecialchars($_GET['msg']) . "</div>";
+    }
+    ?>
 </body>

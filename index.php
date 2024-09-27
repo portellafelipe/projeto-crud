@@ -19,7 +19,7 @@
                     <li><a href="">INÍCIO</a></li>
                     <li><a href="">SOBRE</a></li>
                     <li><a href="">FUNCIONAMENTO</a></li>
-                    <li><a href="">GERENCIAR DISPENSA</a></li>
+                    <li><a href="estoque.php">GERENCIAR DISPENSA</a></li>
                     <li><a href="login.php">LOGIN/CADASTRE-SE</a></li>
                 </ul>
             </div>

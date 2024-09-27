@@ -1,21 +1,26 @@
 <?php
 $usuario = $_POST['cusuario'];
-$email =$_POST['cemail'];
-$senha =$_POST['csenha'];
-//conecta com a base de dados
-include "conecta.php"; //arquivo vamos criar depois
-//comando para inserir na tabela
-$sql = "INSERT INTO LOGIN (usuario, email, senha) VALUES ";
-$sql = $sql."('$usuario','$email','$senha')";
-echo $sql;
+$email = $_POST['cemail'];
+$senha = $_POST['csenha'];
 
-$rs = mysqli_query($conexao,$sql);
-if (!$rs){
-    echo $sql;
-    echo 'Problemas na gravação!!';
-    echo '<meta http-equiv="refresh" content="10;URL=index.html"/>';
-    return;
+// Conecta com a base de dados
+include "conecta.php"; // Arquivo de conexão
+
+// Comando para inserir na tabela
+$sql = "INSERT INTO LOGIN (usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
+
+$rs = mysqli_query($conexao, $sql);
+
+if (!$rs) {
+    // Redireciona em caso de erro
+    header("Location: login.php?msg=Erro ao criar a conta.");
+    exit();
 }
+
+// Fecha a conexão
 mysqli_close($conexao);
-echo '<br>Gravação executada com sucesso';
+
+// Redireciona com mensagem de sucesso
+header("Location: index.php?msg=Conta criada com sucesso!");
+exit();
 ?>

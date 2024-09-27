@@ -1,81 +1,115 @@
-* {
-    box-sizing: border-box;
+/* Barra de navegação */
+.barra_navegacao {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-
-.container{
+.barra_navegacao .container {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    align-items: center;
+    padding: 0 20px;
 }
 
+.logo h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-.form-container{
+.barra_navegacao ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0; /* Removendo padding padrão */
+    margin: 0; /* Removendo margin padrão */
+}
+
+.barra_navegacao ul li {
+    margin: 0 15px;
+}
+
+.barra_navegacao ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.barra_navegacao ul li a:hover {
+    color: yellow;
+}
+
+/* Estilização do corpo */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* Removendo margem padrão do body */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinhando ao topo para evitar sobreposição */
+    height: 100vh; /* 100% da altura da tela */
+    padding-top: 60px; /* Espaço para a barra de navegação */
+}
+
+/* Container para os formulários */
+.container {
+    display: flex;
+    justify-content: space-around; /* Espaçando os formulários */
+    width: 70%;
+    margin: auto; /* Centralizando o container */
+}
+
+/* Estilização dos formulários */
+.form-container {
     width: 45%;
     padding: 20px;
     border: 1px solid gray;
     border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adicionando sombra para destaque */
 }
-
 
 h2 {
     text-align: center;
 }
 
-
-form{
+form {
     display: flex;
     flex-direction: column;
 }
 
+label {
+    margin-top: 10px; /* Espaço acima das labels */
+}
 
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="password"] {
     padding: 10px;
     margin: 10px 0;
     width: 100%;
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 4px; /* Bordas arredondadas */
 }
 
-
-input[type="submit"] {
-    padding: 10px;
-    background-color: cornflowerblue;
-    color: gray;
-    border: none;
-    cursor: pointer;
+.button {
+    display: flex; /* Usando flex para centrar o botão */
+    justify-content: center;
     margin-top: 10px;
 }
 
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-
-.button {
-    padding: 12px 48px;
-    text-align: center;
-    border-radius: 50px;
+button {
+    padding: 10px 20px;
+    background-color: cornflowerblue;
     color: white;
-    margin-top: 1rem;
+    border: none;
+    border-radius: 4px; /* Bordas arredondadas para o botão */
     cursor: pointer;
-    outline: none;
-    border-width: 0;
-    background-color: #1A1B27;
-    font-weight: 600;
-    width: 100%;
+    transition: background-color 0.3s;
 }
 
-
-.button:hover{
-    opacity: 0.8;
+button:hover {
+    background-color: #45a049; /* Efeito hover */
 }
