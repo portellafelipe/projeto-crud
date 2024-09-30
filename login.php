@@ -11,7 +11,8 @@
         <nav class="barra_navegacao">
             <div class="container">
                 <div class="logo">
-                    <h1><a href="index.php">Smart Stock</a></h1>
+                    <img src="logo.png" alt="Logo Smart Stock" class="logo-img">
+                    <h1><a href="index.html">Smart Stock</a></h1>
                 </div>
                 <ul class="navegar_links">
                     <li><a href="">INÍCIO</a></li>
@@ -57,9 +58,4 @@
                 </form>
                 
         </div>
-    <?php 
-    if (isset($_GET['msg'])) {
-        echo "<div class='alert'>" . htmlspecialchars($_GET['msg']) . "</div>";
-    }
-    ?>
 </body>
