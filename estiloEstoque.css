@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    width: 100%;
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+
+.barra_navegacao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+.logo h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+
+.navegar_links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+.navegar_links li {
+    display: inline;
+}
+
+
+.navegar_links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+
+.navegar_links li a:hover {
+    color: #ffdd57;
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+form {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+
+.produtoItem {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 30%;
+}
+
+
+#adicionarProdutoBtn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+
+#adicionarProdutoBtn:hover {
+    background-color: #0056b3;
+}
+
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+/* Estilo básico já existente */
+
+
+section#estoqueUsuario {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo do botão de Atualizar */
+table td form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+table td form button:hover {
+    background-color: #0056b3;
+}
