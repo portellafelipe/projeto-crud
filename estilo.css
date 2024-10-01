@@ -1,6 +1,19 @@
 /* estilo css para a barra de navegação, no caso o menu*/
-.barra_navegacao{
-    background-color:#333;
+.logo {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente o logo e o texto */
+}
+
+.logo-img {
+    height: 40px;
+    /* Ajuste a altura conforme necessário */
+    margin-right: 10px;
+    /* Espaço entre o logo e o texto */
+}
+
+.barra_navegacao {
+    background-color: #333;
     position: fixed;
     top: 0;
     width: 100%;
@@ -8,30 +21,30 @@
     padding: 10px 0;
 }
 
-.barra_navegacao .container{
+.barra_navegacao .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
 }
 
-.logo h1 a{
+.logo h1 a {
     color: white;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
 }
 
-.barra_navegacao ul{
+.barra_navegacao ul {
     list-style-type: none;
     display: flex;
 }
 
-.barra_navegacao ul li{
+.barra_navegacao ul li {
     margin: 0 15px;
 }
 
-.barra_navegacao ul li a{
+.barra_navegacao ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -42,25 +55,47 @@
 .barra_navegacao ul li a:hover {
     color: yellow;
 }
+
 /* aq é o inicio*/
 
 /* Hero Section (Seção principal) */
+/* Estilos da seção de introdução */
+/* Estilos da seção de introdução */
 .hero {
-    background-color: #f4f4f4;
-    padding: 100px 20px;
+    background-image: url('_479cad18-4db9-4890-bd5a-13e2e5bf3933.jfif');
+    /* Substitua 'sua-imagem.jpg' pela imagem desejada */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    /* Altura da tela reduzida */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
     text-align: center;
-    margin-top: 70px; /* Espaço para a barra fixa */
+    opacity: 0;
+    animation: fadeInZoom 3s ease-in forwards;
+    padding: 20px;
+    /* Espaço interno */
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    /* Borda branca semi-transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para profundidade */
+    margin: 20px;
+    /* Espaço externo */
 }
 
 .hero h1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 18px;
-    color: #666;
-    margin: 20px 0;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn {
@@ -76,6 +111,22 @@
 .hero .btn:hover {
     background-color: #FFD700;
 }
+
+/* Animação Fade-in com Zoom */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+        /* Inicia com um leve zoom out */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /* Volta ao tamanho normal */
+    }
+}
+
 /* Seção Sobre */
 #sobre {
     padding: 50px 20px;
@@ -91,13 +142,16 @@
 
 .sobre-imagem {
     flex: 1;
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
+    margin-right: 20px;
+    /* Espaço entre a imagem e o texto */
 }
 
 .sobre-imagem img {
-    max-width: 100%; /* A imagem será redimensionada de acordo com o tamanho da tela */
+    max-width: 100%;
+    /* A imagem será redimensionada de acordo com o tamanho da tela */
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas para a imagem */
+    border-radius: 10px;
+    /* Bordas arredondadas para a imagem */
 }
 
 .sobre-texto {
@@ -142,7 +196,8 @@
 
 .baloes {
     display: flex;
-    justify-content: space-between; /* Use space-between para espaçamento igual */
+    justify-content: space-between;
+    /* Use space-between para espaçamento igual */
     align-items: flex-start;
     margin-top: 30px;
 }
@@ -152,9 +207,11 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    width: 30%; /* Garantir que cada balão ocupe 30% */
+    width: 30%;
+    /* Garantir que cada balão ocupe 30% */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 10px; /* Adicione uma margem lateral para espaçamento */
+    margin: 0 10px;
+    /* Adicione uma margem lateral para espaçamento */
 }
 
 .balao h3 {
@@ -169,44 +226,51 @@
 /* Media queries para responsividade */
 @media (max-width: 768px) {
     .baloes {
-        flex-direction: column; /* Muda para coluna em telas menores */
+        flex-direction: column;
+        /* Muda para coluna em telas menores */
         align-items: center;
     }
-    
+
     .balao {
-        width: 80%; /* Ajusta o tamanho em telas menores */
-        margin: 10px 0; /* Espaçamento vertical */
+        width: 80%;
+        /* Ajusta o tamanho em telas menores */
+        margin: 10px 0;
+        /* Espaçamento vertical */
     }
 }
 
 /* parte do gerenciamento */
 
-#gerenciar-dispensa{
+#gerenciar-dispensa {
     padding: 50px 20px;
-    background-color: white ;
+    background-color: white;
 }
 
-.gerenciar-container{
+.gerenciar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
 }
-.gerenciar-texto{
+
+.gerenciar-texto {
     flex: 1;
     color: #333;
 }
-.gerenciar-texto h2{
+
+.gerenciar-texto h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
-.gerenciar-texto p{
+
+.gerenciar-texto p {
     font-size: 1.2em;
     line-height: 1.6;
     margin-bottom: 20px;
 }
-.gerenciar-texto .btn{
+
+.gerenciar-texto .btn {
     padding: 10px 20px;
     background-color: #FFD700;
     color: #333;
@@ -216,51 +280,106 @@
     transition: background-color 0.3s;
 }
 
-.gerenciar-texto .btn:hover{
+.gerenciar-texto .btn:hover {
     background-color: #FFD700;
 }
 
-.gerenciar-imagem{
+.gerenciar-imagem {
     flex: 1;
     text-align: right;
 }
 
-.gerenciar-imagem img{
+.gerenciar-imagem img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .gerenciar-container {
         flex-direction: column;
         text-align: center;
     }
+
     .gerenciar-imagem {
         text-align: center;
         margin-top: 20px;
     }
+
     .gerenciar-imagem img {
         max-width: 80%;
     }
 }
+
 /* parte de baixo, vulgo rodapé */
 
 footer {
     background-color: #333;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: yellow;
+}
+
+footer .social-links {
+    margin-top: 20px;
+}
+
+footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: yellow;
+}
+
+
 .alert {
-    background-color: #d4edda; /* Verde claro */
-    color: #155724; /* Verde escuro */
+    background-color: #d4edda;
+    /* Verde claro */
+    color: #155724;
+    /* Verde escuro */
     padding: 10px;
     margin: 20px 0;
-    border: 1px solid #c3e6cb; /* Borda verde clara */
+    border: 1px solid #c3e6cb;
+    /* Borda verde clara */
     border-radius: 5px;
 }

@@ -1,6 +1,6 @@
 <?php
 include "gravaEstoque.php";
-$txtConteudo = filter_input_array(INPUT_GET,FILTER_DEFAULT)
+$txtConteudo = filter_input_array(INPUT_GET,FILTER_DEFAULT);
 $sql = "SELECT * FROM ESTOQUE";
 $rs = mysqli_query($conexao,$sql);
 $total_registros = mysqli_num_rows($rs);

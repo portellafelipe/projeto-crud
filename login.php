@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
     <title>Cadastro de Pessoa</title>
     <link rel="stylesheet" href="estiloLogin.css">
 </head>
@@ -26,7 +27,7 @@
         <!-- aq vai o login -->
          <div class="form-container">
             <h2>Login</h2>
-            <form action="gravaLogin.php" method="post"> 
+            <form action="acessaLogin.php" method="post"> 
                 <!-- email -->
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" required>
@@ -54,12 +55,18 @@
                 <div class="button">
                     <button type="submit">Cadastrar</button> <!-- Botão de cadastro -->
                 </div>
+                <div>
+                <?php
+                include("acessaLogin.php");
+
+                // Verifique se o resultado é nulo ou vazio
+                if ($result === null || (is_array($result) && count($result) === 0)) {
+                    echo "Usuário não encontrado!";
+                }
+                ?>
+
+                </div>
                 </form>
                 
         </div>
-    <?php 
-    if (isset($_GET['msg'])) {
-        echo "<div class='alert'>" . htmlspecialchars($_GET['msg']) . "</div>";
-    }
-    ?>
 </body>
