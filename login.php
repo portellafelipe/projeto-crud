@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="logo">
                     <img src="logo.png" alt="Logo Smart Stock" class="logo-img">
-                    <h1><a href="index.html">Smart Stock</a></h1>
+                    <h1><a href="index.php">Smart Stock</a></h1>
                 </div>
                 <ul class="navegar_links">
                     <li><a href="">INÍCIO</a></li>
@@ -37,7 +37,15 @@
                 <input type="password" id="senha" name="senha" required>
                 <div class="button">
                     <button type="submit">Login</button>
-
+                </div>
+                <div class="mensagem-erro">
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']); // Limpa a mensagem após exibir
+                    }
+                    ?>
                 </div>
             </form>
          </div>
@@ -55,17 +63,6 @@
                 <input type="password" id="senha" name="csenha" required>
                 <div class="button">
                     <button type="submit">Cadastrar</button> <!-- Botão de cadastro -->
-                </div>
-                <div>
-                <?php
-                include("acessaLogin.php");
-
-                // Verifique se o resultado é nulo ou vazio
-                if ($result === null || (is_array($result) && count($result) === 0)) {
-                    echo "Usuário não encontrado!";
-                }
-                ?>
-
                 </div>
                 </form>
                 

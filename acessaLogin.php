@@ -1,37 +1,52 @@
 <?php
+session_start(); // Inicia a sessão
+
 include("conecta.php"); // Arquivo de conexão
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+// Verifica se os dados foram enviados via POST
+if (isset($_POST['email']) && isset($_POST['senha'])) {
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-// Usando prepared statement para evitar SQL injection
-$stmt = $conexao->prepare("SELECT * FROM login WHERE email = ?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
+    // Usando prepared statement para evitar SQL injection
+    $stmt = $conexao->prepare("SELECT * FROM login WHERE email = ?");
+    
+    if ($stmt) {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if ($result->num_rows == 1) {
-    $row = $result->fetch_assoc();
+        if ($result->num_rows === 1) {
+            $row = $result->fetch_assoc();
 
-    // Debug: Exibir senha informada e hash armazenado
-    // echo "Senha informada: " . $senha . "<br>";
-    // echo "Hash armazenado: " . $row['senha'] . "<br>";
+            // Verifica a senha informada
+            if (password_verify($senha, $row['senha'])) {
+                // Login bem-sucedido
+                $_SESSION['ID_Pessoa'] = $row['id'];
+                $_SESSION['nome'] = $row['usuario'];
 
-    // Verifica a senha informada
-    if (password_verify($senha, $row['senha'])) {
-        session_start();
-        $_SESSION['ID_Pessoa'] = $row['id'];
-        $_SESSION['nome'] = $row['usuario']; // Corrigido para 'usuario'
+                header("Location: teste.html");
+                exit();
+            } else {
+                // Senha inválida
+                $_SESSION['error'] = "Senha inválida.";
+            }
+        } else {
+            // Usuário não encontrado
+            $_SESSION['error'] = "Email não encontrado.";
+        }
 
-        header("Location: teste.html");
-        exit();
+        $stmt->close();
     } else {
-        echo "Senha inválida.";
+        $_SESSION['error'] = "Erro ao preparar a consulta.";
     }
 } else {
-    echo "Usuário não encontrado.";
+    $_SESSION['error'] = "Por favor, preencha todos os campos.";
 }
 
-$stmt->close();
 $conexao->close();
+
+// Redireciona de volta para a página de login para mostrar a mensagem de erro
+header("Location: login.php");
+exit();
 ?>
