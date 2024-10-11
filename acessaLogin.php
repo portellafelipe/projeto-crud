@@ -25,7 +25,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
                 $_SESSION['ID_Pessoa'] = $row['id'];
                 $_SESSION['nome'] = $row['usuario'];
 
-                header("Location: teste.html");
+                header("Location: clone.php");
                 exit();
             } else {
                 // Senha inválida

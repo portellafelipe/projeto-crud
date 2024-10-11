@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,24 +19,30 @@
 
 <body>
 
-
-    <header>
-        <nav class="barra_navegacao">
-            <div class="container">
-                <div class="logo">
-                    <img src="logo.png" alt="Logo Smart Stock" class="logo-img">
-                    <h1><a href="index.php">Smart Stock</a></h1>
-                </div>
-                <ul class="navegar_links">
-                    <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="#sobre">SOBRE</a></li>
-                    <li><a href="#funcionamento">FUNCIONAMENTO</a></li>
-                    <li><a href="estoque.php">GERENCIAR DISPENSA</a></li>
-                    <li><a href="login.php">LOGIN/CADASTRE-SE</a></li>
-                </ul>
+<header>
+    <nav class="barra_navegacao">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Smart Stock" class="logo-img">
+                <h1><a href="index.php">Smart Stock</a></h1>
             </div>
-        </nav>
-    </header>
+            <ul class="navegar_links">
+                <li><a href="index.php">INÍCIO</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#funcionamento">FUNCIONAMENTO</a></li>
+                <li><a href="estoque.php">GERENCIAR DISPENSA</a></li>
+                <li>
+                    <?php if (isset($_SESSION['cusuario'])): ?>
+                        <a href="dashboard.php">Olá, <?php echo $_SESSION['cusuario']; ?></a>
+                    <?php else: ?>
+                        <a href="login.php">LOGIN/CADASTRE-SE</a>
+                    <?php endif; ?>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
     <!-- a parte do inicio, q vai colocar alguma img so pra dar uma ideia, nao é ainda o sobre-->
     <!-- a parte do inicio, q vai colocar alguma img so pra dar uma ideia, nao é ainda o sobre-->
 
