@@ -13,7 +13,7 @@ if (!isset($_SESSION['nome'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Usuário</title>
+    <title>Smart Stock</title>
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="estilo.css">
 </head>
@@ -43,19 +43,43 @@ if (!isset($_SESSION['nome'])) {
 <section class="hero">
     <div class="container">
         <h1>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</h1>
-        <p>Aqui estão suas informações:</p>
-        
-        <h2>Informações do Usuário</h2>
-        <p><strong>Nome de Usuário:</strong> <?php echo htmlspecialchars($_SESSION['nome']); ?></p>
-        <!-- Adicione mais informações aqui, como email, etc. -->
-        
-        <a href="logout.php" class="btn">Sair</a>
+        <p>Gerencie sua dispensa com praticidade.</p>
+    </div>
+</section>
+
+
+<section id="gerenciar-dispensa">
+    <div class="container gerenciar-container">
+        <div class="gerenciar-texto">
+            <h2>Gerencie sua dispensa, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</h2>
+            <p>Adicione novos produtos, atualize quantidades e monitore as datas de validade com facilidade. Receba alertas para evitar desperdícios e tenha sempre uma visão clara do que precisa ser usado ou reposto.</p>
+            <a href="estoque.php" class="btn">Acessar Dispensa</a>
+        </div>
+        <div class="gerenciar-imagem">
+            <img src="lista.webp" alt="Dispensa">
+        </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
         <p>&copy; 2024 Smart Stock. Todos os direitos reservados.</p>
+        <ul>
+            <li><a href="index.php">Início</a></li>
+            <li><a href="sobre.php">Sobre</a></li>
+            <li><a href="funcionamento.php">Funcionamento</a></li>
+            <li><a href="contato.php">Contato</a></li>
+        </ul>
+        <p>Email: <a href="mailto:contato@smartstock.com">contato@smartstock.com</a></p>
+        <ul>
+            <li><a href="politica-privacidade.php">Política de Privacidade</a></li>
+            <li><a href="termos-uso.php">Termos de Uso</a></li>
+        </ul>
+        <div class="social-links">
+            <p>Siga-nos nas redes sociais:</p>
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
     </div>
 </footer>
 

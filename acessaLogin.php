@@ -22,7 +22,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
             // Verifica a senha informada
             if (password_verify($senha, $row['senha'])) {
                 // Login bem-sucedido
-                $_SESSION['ID_Pessoa'] = $row['id'];
+                $_SESSION['ID_Pessoa'] = $row['ID_Pessoa'];
                 $_SESSION['nome'] = $row['usuario'];
 
                 header("Location: clone.php");
