@@ -1,7 +1,6 @@
 <?php
 // Inicia a sessão
 session_start();
-var_dump($_SESSION);
 require 'conecta.php'; 
 
 // Verifica se o usuário está logado
@@ -88,6 +87,7 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
                 <input type="number" name="cquantidade" placeholder="Quantidade" required>
             </div>
         </div>
+        <button type="button" id="adicionarProdutoBtn">Adicionar outro produto</button> 
         <input type="submit" value="Enviar Produtos">
     </form>
 
@@ -110,10 +110,20 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
                         <td><?php echo htmlspecialchars($produto['dt_validade']); ?></td>
                         <td><?php echo htmlspecialchars($produto['quantidade']); ?></td>
                         <td>
-                            <form action="atualizar_produto.php" method="post">
-                                <input type="hidden" name="produto_id" value="<?php echo $produto['id']; ?>">
-                                <button type="submit">Atualizar</button>
-                            </form>
+                        <form method="POST" action="excluirEstoque.php">
+                            <input type="hidden" name="id_estoque" value="<?php echo $produto['id_estoque']; ?>">
+                            <button type="submit" title="Excluir">
+                                <img src="excluir.png" alt="Excluir" style="width: 20px; height: 20px;">
+                                </button>
+                        </form>
+                        <form method="POST" action="alterarEstoque.php">
+                            <input type="hidden" name="id_estoque" value="<?php echo $produto['id_estoque']; ?>">
+                            <button type="submit" title="Alterar">
+                                <img src="alterar.png" alt="Alterar" style="width: 20px; height: 20px;">
+                            </button>
+                        </form>
+
+
                         </td>
                     </tr>
                 <?php endforeach; ?>
