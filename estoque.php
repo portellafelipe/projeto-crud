@@ -68,10 +68,10 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
                 </div>
                 <ul class="navegar_links">
                     <li><a href="clone.php">INÍCIO</a></li>
-                    <li><a href="#funcionamento">FUNCIONAMENTO</a></li>
+                    <li><a href="#favoritos">FAVORITOS</a></li>
                     <li><a href="estoque.php">GERENCIAR DISPENSA</a></li>
                     <li>
-                    <a href="index.php">
+                    <a href="logout.php">
                     <img src="logoutt.png" alt="Sair" style="width: 25px; height: 25px;">
                     SAIR
                     </a>

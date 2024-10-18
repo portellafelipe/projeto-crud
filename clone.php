@@ -36,7 +36,7 @@ if (!isset($_SESSION['nome'])) {
                     <a href="clone.php">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?></a>
                 </li>
                 <li>
-                <a href="index.php">
+                <a href="logout.php">
                     <img src="logoutt.png" alt="Sair" style="width: 25px; height: 25px;">
                 </a>
                 </li>
