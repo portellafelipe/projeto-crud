@@ -212,3 +212,35 @@ table td form button {
 table td form button:hover {
     background-color: #0056b3;
 }
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  label svg {
+    width: 44px;
+    height: 44px;
+    fill: none;
+    stroke: #000;
+    stroke-width: 2px;
+  }
+  
+  input[type="checkbox"]:checked + label svg {
+    fill: #FFC107;
+    animation: pop_42 0.5s ease-out;
+  }
+  
+  @keyframes pop_42 {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.5);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  

@@ -13,10 +13,10 @@ if ($stmt) {
     if ($stmt->execute()) {
         // Mensagem de sucesso
         echo "<h1>Registro excluído com sucesso!</h1>";
-        echo "<p>Redirecionando em 5 segundos...</p>";
+        echo "<p>Redirecionando em 3 segundos...</p>";
 
         // Redirecionar após 5 segundos
-        header("refresh:5;url=estoque.php"); // Altere para a página que você deseja
+        header("refresh:3;url=estoque.php"); // Altere para a página que você deseja
         exit();
     } else {
         echo "Erro ao excluir registro: " . $stmt->error;

@@ -64,13 +64,19 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
             <div class="container">
                 <div class="logo">
                     <img src="logo.png" alt="Logo Smart Stock" class="logo-img">
-                    <h1><a href="index.php">Smart Stock</a></h1>
+                    <h1><a href="clone.php">Smart Stock</a></h1>
                 </div>
                 <ul class="navegar_links">
-                    <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="#sobre">SOBRE</a></li>
+                    <li><a href="clone.php">INÍCIO</a></li>
                     <li><a href="#funcionamento">FUNCIONAMENTO</a></li>
                     <li><a href="estoque.php">GERENCIAR DISPENSA</a></li>
+                    <li>
+                    <a href="index.php">
+                    <img src="logoutt.png" alt="Sair" style="width: 25px; height: 25px;">
+                    SAIR
+                    </a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -122,6 +128,14 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
                                 <img src="alterar.png" alt="Alterar" style="width: 20px; height: 20px;">
                             </button>
                         </form>
+                        <td>
+                        <input type="checkbox" id="star-<?php echo $produto['id_estoque']; ?>">
+                        <label for="star-<?php echo $produto['id_estoque']; ?>">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+                            </svg>
+                        </label>
+                        </td>
 
 
                         </td>
@@ -130,6 +144,29 @@ $produtos = $result->fetch_all(MYSQLI_ASSOC);
             </tbody>
         </table>
     </section>
+    <section id="favoritos">
+    <h2>Favoritos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Validade</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aqui você pode recuperar e exibir os produtos favoritos do banco de dados -->
+            <?php foreach ($favoritos as $favorito): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($favorito['produto']); ?></td>
+                    <td><?php echo htmlspecialchars($favorito['dt_validade']); ?></td>
+                    <td><?php echo htmlspecialchars($favorito['quantidade']); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</section>
+
 
     <script src="script.js"></script>
 </body>
